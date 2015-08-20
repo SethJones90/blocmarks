@@ -17,6 +17,12 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro', '1.0'
 
+group :development, :test do
+  gem 'rspec-rails', '~>3.0'
+  gem 'capybara'
+end
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
