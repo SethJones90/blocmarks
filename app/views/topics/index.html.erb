@@ -1,0 +1,9 @@
+<h1>All Blocmarks</h1>
+<% @topics.each do |topic| %>
+
+<div class="col-md-4"><%= link_to topic.title, topic %>
+</div>
+<% end %>
+
+<%= link_to "Create a topic", new_topic_path %>
+

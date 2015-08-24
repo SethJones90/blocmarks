@@ -1,0 +1,8 @@
+<h1><%= @topic.title %></h1>
+
+<% @bookmarks.each do |bookmark| %>
+<p><%= bookmark.url %></p>
+<% end %>
+
+
+<%= link_to "Delete Topic", [@topic], method: :delete, class: 'btn btn-dnager', data: { confirm: 'Are you sure you want to delete this post?'} %>
