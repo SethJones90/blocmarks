@@ -1,4 +1,4 @@
-<%= form_for @bookmark do |f| %>
+<%= form_for [@topic, @bookmark] do |f| %>
   <%= f.label :url %>
   <%= f.text_area :url %>
 
