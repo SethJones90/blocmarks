@@ -5,9 +5,10 @@
 <% end %>
 
 <div class="">
-  <button type="button" class="btn btn-default">
-    <%= link_to "Create a bookmark", new_topic_bookmark_path(@topic) %>
-  </button>
+  <% if policy(Bookmark.new).create? %>
+    <button type="button" class="btn btn-default">
+      <%= link_to "Create a bookmark", new_topic_bookmark_path(@topic) %>
+    </button>
 </div>
-
 <%= link_to "Delete Topic", [@topic], method: :delete, class: 'btn btn-dnager', data: { confirm: 'Are you sure you want to delete this post?'} %>
+<% end %>

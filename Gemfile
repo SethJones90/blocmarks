@@ -24,6 +24,7 @@ end
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'pundit'
 
 
 # Use SCSS for stylesheets

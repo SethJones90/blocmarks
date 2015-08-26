@@ -6,7 +6,9 @@
   </div>
 
   <% topic.bookmarks.take(3).each do |bookmark| %>
+  
     <p><%= bookmark.url %></p>
+    <p><%= image_tag("bookmark.png") %>
   <% end %>
 <% end %>
 
