@@ -1,7 +1,7 @@
 <%= form_for [@topic, @bookmark] do |f| %>
   <%= f.label :url %>
-  <%= f.text_area :url %>
+  <%= f.text_area :url, class: "form-control" %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "btn btn-success" %>
 <% end %>
 

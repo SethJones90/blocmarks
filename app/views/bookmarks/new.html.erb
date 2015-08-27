@@ -1,6 +1,6 @@
 <%= form_for [@topic, @bookmark] do |f| %>
   <%= f.label :url %>
-  <%= f.text_area :url %>
+  <%= f.text_area :url, class: "form-control" %>
 
-  <%= f.submit "Save"  %>
+  <%= f.submit "Save", class: "btn btn-success"  %>
 <% end %>
