@@ -1,13 +1,15 @@
 <h1><%= @topic.title %></h1>
 
+  <% @bookmarks.each_slice(4) do |bookmark_group| %>
 <div class="row">
-  <% @bookmarks.each do |bookmark| %>
-    <div class="col-md-4">
+  <% bookmark_group.each do |bookmark| %>
+    <div class="col-md-3">
       <%= link_to bookmark.url, [@topic, bookmark] %>
       <%= image_tag("bookmark.png") %>
     </div>
-  <% end %>
+    <% end %>
 </div>
+  <% end %>
 
 <div class="col-md-12 text-center">
   <% if policy(Bookmark.new).create? %>

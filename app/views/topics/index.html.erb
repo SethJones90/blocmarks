@@ -1,21 +1,22 @@
 <h1>All Blocmarks</h1>
-<div class="row">
-  <% @topics.each do |topic| %>
-    <div class="col-md-4">
-      <%= link_to topic.title, topic %>
 
-      <% topic.bookmarks.take(3).each do |bookmark| %>
-
-        <%= bookmark.url %>
-        <%= image_tag("bookmark.png") %>
+<% @topics.each do |topic| %>
+  <div class="topic_row">
+    <h3><%= link_to topic.title, topic %></h3>
+    <div class="row">
+      <% topic.bookmarks.take(4).each do |bookmark| %>
+        <div class="col-md-3">
+          <div>
+            <%= bookmark.url %>
+          </div>
+          <%= image_tag("bookmark.png") %>
+        </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <div class="">
-  <button type="button" class="btn btn-default">
-    <%= link_to "Create a topic", new_topic_path %>
-  </button>
+  <%= button_to "Create a topic", new_topic_path, class: "btn btn-default" %>
 </div>
 
