@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   
   resources :topics do
-    resources :bookmarks, except: [:index]
+    resources :bookmarks, except: [:index] do
+      resources :likes, only: [:create, :destroy]
+    end
   end
 
   post :incoming, to: 'incoming#create'
