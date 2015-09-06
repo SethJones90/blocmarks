@@ -8,7 +8,7 @@ class IncomingController < ApplicationController
     puts "INCOMING PARAMS HERE: #{params}"
 
     @user = User.find_by(email: params[:sender])
-    @topic = Topic.find_by(title: params[:subject])
+    @topic = Topic.find_or_create_by(title: params[:subject])
     @bookmark = Bookmark.new(url: params['stripped-text'])
 
     @bookmark.user = @user
