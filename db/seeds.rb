@@ -34,6 +34,7 @@ bookmarks = Bookmark.all
 user = User.first
 user.skip_reconfirmation!
 user.update_attributes!(
+  name:       'Seth Jones',
   email: 'sethjmusic@gmail.com',
   password: 'helloworld'
  )
