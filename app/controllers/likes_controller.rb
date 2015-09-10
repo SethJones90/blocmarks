@@ -7,11 +7,11 @@ class LikesController < ApplicationController
 
     if like.save
       flash[:notice] = "You successfully liked this bookmark!"
-      redirect_to @bookmark.topic
     else
       flash[:error] = "An error occured while trying to like this bookmark. Please try again."
-      redirect_to @bookmark.topic
     end
+
+    redirect_to request.referer
   end
 
   def destroy
@@ -22,11 +22,11 @@ class LikesController < ApplicationController
 
     if like.destroy
       flash[:notice] = "You successfully unliked this bookmark"
-      redirect_to @bookmark.topic
     else
       flash[:error] = "An error occured while trying to unlike this bookmark. Please try again."
-      redirect_to @bookmark.topic
     end
+    
+    redirect_to request.referer
   end
 
 end
