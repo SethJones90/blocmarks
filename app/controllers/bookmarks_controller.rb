@@ -18,6 +18,8 @@ class BookmarksController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new(params.require(:bookmark).permit(:url))
+    #@bookmark = Bookmark.new_with_embed(params.require(:bookmark).permit(:url))
+
     @bookmark.user = current_user
     @bookmark.topic = @topic
     authorize @bookmark
